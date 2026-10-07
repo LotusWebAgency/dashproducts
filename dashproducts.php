@@ -474,7 +474,7 @@ class dashproducts extends Module
         AND dr.`time_start` BETWEEN "' . pSQL($date_from) . '" AND "' . pSQL($date_to) . '"
         AND dr.`time_end` BETWEEN "' . pSQL($date_from) . '" AND "' . pSQL($date_to) . ' 23:59:59"
         GROUP BY p.id_object
-        ORDER BY SUM(pv.counter) DESC
+        ORDER BY SUM(pv.counter) DESC, p.id_object
         LIMIT ' . (int) $limit);
     }
 
